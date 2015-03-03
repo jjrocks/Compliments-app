@@ -1,9 +1,7 @@
 package com.jjwanda.compliments;
 
-import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,10 +29,6 @@ public class ComplimentsActivity extends ActionBarActivity {
         initializeVariables();
 
         setContentView(R.layout.activity_compliments);
-    }
-
-    @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         setupUI();
         changeCompliment();
 
@@ -45,7 +39,6 @@ public class ComplimentsActivity extends ActionBarActivity {
                 changeCompliment();
             }
         });
-        return super.onCreateView(parent, name, context, attrs);
     }
 
     private void initializeVariables()
@@ -60,7 +53,7 @@ public class ComplimentsActivity extends ActionBarActivity {
     private void setupUI()
     {
         complimentTextView = (TextView) findViewById(R.id.compliment_textview);
-        background = (RelativeLayout) findViewById(R.id.compliments_relateiveView);
+        background = (RelativeLayout) findViewById(R.id.compliments_relativeView);
     }
 
     private void randomizeString()
