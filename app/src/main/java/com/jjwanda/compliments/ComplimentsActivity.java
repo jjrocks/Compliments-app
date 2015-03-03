@@ -1,5 +1,6 @@
 package com.jjwanda.compliments;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +18,12 @@ public class ComplimentsActivity extends ActionBarActivity {
     String compliment = "";
     int complimentsSize;
     int complimentIndex;
+
+    String[] lightColorArray;
+    String currentColor;
+    int colorsSize;
+    int colorIndex;
+
     Random randomGen;
 
     TextView complimentTextView;
@@ -35,7 +42,7 @@ public class ComplimentsActivity extends ActionBarActivity {
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                randomizeString();
+                randomizeAll();
                 changeCompliment();
             }
         });
@@ -48,6 +55,11 @@ public class ComplimentsActivity extends ActionBarActivity {
         randomGen = new Random();
         complimentIndex = randomGen.nextInt(complimentsSize);
         compliment = complimentsArray[complimentIndex];
+
+        lightColorArray = getResources().getStringArray(R.array.light_colors);
+        colorsSize = lightColorArray.length;
+        colorIndex = randomGen.nextInt(colorsSize);
+        currentColor = lightColorArray[colorIndex];
     }
 
     private void setupUI()
@@ -67,9 +79,27 @@ public class ComplimentsActivity extends ActionBarActivity {
         compliment = complimentsArray[complimentIndex];
     }
 
+    private void randomizeColor()
+    {
+        int randomNumber = colorIndex;
+        while(randomNumber == colorIndex)
+        {
+            randomNumber = randomGen.nextInt(colorsSize);
+        }
+        colorIndex = randomNumber;
+        currentColor = lightColorArray[colorIndex];
+    }
+
+    private void randomizeAll()
+    {
+        randomizeString();
+        randomizeColor();
+    }
+
     private void changeCompliment()
     {
         complimentTextView.setText(compliment);
+        background.setBackgroundColor(Color.parseColor(currentColor));
     }
 
     @Override
