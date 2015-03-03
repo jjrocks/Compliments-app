@@ -40,7 +40,7 @@ public class ComplimentsActivity extends ActionBarActivity {
 
     private void setupUI()
     {
-        complimentTextView = (TextView) findViewById(R.id.compliment_textview);
+        complimentTextView = (TextView) findViewById(R.id.compliment_textview); //Change
     }
 
     @Override
