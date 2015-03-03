@@ -1,9 +1,13 @@
 package com.jjwanda.compliments;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -18,15 +22,30 @@ public class ComplimentsActivity extends ActionBarActivity {
     Random randomGen;
 
     TextView complimentTextView;
+    RelativeLayout background;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         initializeVariables();
-        setupUI();
 
         setContentView(R.layout.activity_compliments);
+    }
+
+    @Override
+    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        setupUI();
+        changeCompliment();
+
+        background.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                randomizeString();
+                changeCompliment();
+            }
+        });
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     private void initializeVariables()
@@ -40,7 +59,24 @@ public class ComplimentsActivity extends ActionBarActivity {
 
     private void setupUI()
     {
-        complimentTextView = (TextView) findViewById(R.id.compliment_textview); //Change
+        complimentTextView = (TextView) findViewById(R.id.compliment_textview);
+        background = (RelativeLayout) findViewById(R.id.compliments_relateiveView);
+    }
+
+    private void randomizeString()
+    {
+        int randomNumber = complimentIndex;
+        while (randomNumber == complimentIndex)
+        {
+            randomNumber = randomGen.nextInt(complimentsSize);
+        }
+        complimentIndex = randomNumber;
+        compliment = complimentsArray[complimentIndex];
+    }
+
+    private void changeCompliment()
+    {
+        complimentTextView.setText(compliment);
     }
 
     @Override
