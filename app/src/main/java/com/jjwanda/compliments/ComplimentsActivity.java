@@ -81,7 +81,7 @@ public class ComplimentsActivity extends ActionBarActivity {
 
     private void randomizeColor()
     {
-        int randomNumber = colorIndex;
+        int randomNumber = colorIndex; //Test stuff
         while(randomNumber == colorIndex)
         {
             randomNumber = randomGen.nextInt(colorsSize);
