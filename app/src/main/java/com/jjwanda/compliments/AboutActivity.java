@@ -2,8 +2,10 @@ package com.jjwanda.compliments;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class AboutActivity extends ActionBarActivity {
@@ -12,6 +14,19 @@ public class AboutActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        linkAllTexts();
+    }
+
+    private void linkAllTexts()
+    {
+        linkText((TextView) findViewById(R.id.donate_text));
+        linkText((TextView) findViewById(R.id.inspired_by_text));
+        linkText((TextView) findViewById(R.id.website_text));
+    }
+
+    private void linkText(TextView textView)
+    {
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 

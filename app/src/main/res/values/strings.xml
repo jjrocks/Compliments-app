@@ -245,8 +245,7 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="action_settings">Settings</string>
     <string name="created_by">Created by JJ Wanda</string>
-    <string name="inspired_by">Inspired by: http://complimentmachine.com</string>
-    <string name="my_website2"><![CDATA[Check out <a href=\"http://jjwanda.com\">my website!</a>]]></string>
+    <string name="inspired_by">Inspired by: <a href="http://complimentmachine.com">Compliment Machine</a></string>
     <string name="my_website">Check out <a href="http://jjwanda.com">my website!</a></string>
     <string name="donate"><a href="http://google.com">Buy me some hot chocolate!</a></string>
 </resources>
