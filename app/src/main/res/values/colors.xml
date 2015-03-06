@@ -71,4 +71,6 @@
     <color name="initial_color">#FFFFFF</color>
     <color name="about_color">#2196F3</color>
     <color name="white">#FFFFFF</color>
+    <color name="about_text_color">#FFFFFF</color>
+    <color name="about_link_color">#000000</color>
 </resources>

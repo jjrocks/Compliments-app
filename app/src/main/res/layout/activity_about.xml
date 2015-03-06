@@ -20,40 +20,46 @@
             android:textSize="@dimen/compliment_text_size"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/about_compliment_padding_bottom"
             />
+
+        <TextView
+            android:id="@+id/about_created_by_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@id/about_title_textview"
+            android:text="@string/created_by"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/about_compliment_padding_bottom"
+            style="@style/about_text"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/about_title_textview"
+            android:layout_below="@id/about_created_by_textview"
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/about_created_by_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="@string/created_by"/>
 
             <TextView
                 android:id="@+id/inspired_by_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/inspired_by"/>
+                android:text="@string/inspired_by"
+                style="@style/about_text"/>
 
             <TextView
                 android:id="@+id/donate_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/donate"/>
+                android:text="@string/donate"
+                style="@style/about_text"/>
 
             <TextView
                 android:id="@+id/website_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/my_website"/>
+                android:text="@string/my_website"
+                style="@style/about_text"/>
 
         </LinearLayout>
 
