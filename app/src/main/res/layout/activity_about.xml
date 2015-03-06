@@ -4,6 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/about_color"
     tools:context="com.jjwanda.compliments.AboutActivity">
 
     <LinearLayout
@@ -14,6 +15,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="@dimen/compliment_text_size"
+            android:textColor="@color/white"
+            android:paddingBottom="@dimen/about_compliment_padding_bottom"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/created_by"/>
 
         <TextView
