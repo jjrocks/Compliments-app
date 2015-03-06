@@ -9,11 +9,13 @@
         <item>You have very smooth hair.</item>
         <item>You deserve a promotion.</item>
         <item>Good effort!</item>
+        <item>You\'ve done great work!</item>
+        <item>c:</item>
         <item>What a fine sweater!</item>
         <item>I appreciate all of your opinions.</item>
         <item>I like your style.</item>
         <item>Your T-shirt smells fresh.</item>
-        <item>I love what you\'ve done with the place.</item>
+        <item>I love what you\'ve done with your phone.</item>
         <item>You are like a spring flower; beautiful and vivacious.</item>
         <item>I am utterly disarmed by your wit.</item>
         <item>I really enjoy the way you pronounce the word \'ruby\'.</item>
@@ -247,5 +249,5 @@
     <string name="created_by">Created by JJ Wanda</string>
     <string name="inspired_by">Inspired by: <a href="http://complimentmachine.com">Compliment Machine</a></string>
     <string name="my_website">Check out <a href="http://jjwanda.com">my website!</a></string>
-    <string name="donate"><a href="http://google.com">Buy me some hot chocolate!</a></string>
+    <string name="donate"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WX3VWJBPFZQTJ">Buy me some hot chocolate!</a></string>
 </resources>
