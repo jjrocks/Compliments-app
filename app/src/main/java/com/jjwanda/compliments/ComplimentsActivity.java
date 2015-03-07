@@ -2,8 +2,10 @@ package com.jjwanda.compliments;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +16,8 @@ import java.util.Random;
 
 
 public class ComplimentsActivity extends ActionBarActivity {
+
+    private ShareActionProvider mShareActionProvider;
 
     String[] complimentsArray;
     String compliment = "";
@@ -101,13 +105,39 @@ public class ComplimentsActivity extends ActionBarActivity {
     {
         complimentTextView.setText(compliment);
         background.setBackgroundColor(Color.parseColor(currentColor));
+
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, compliment);
+        shareIntent.setType("text/plain");
+        setShareIntent(shareIntent);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_compliments, menu);
+
+        // Locate MenuItem with ShareActionProvider
+        MenuItem item = menu.findItem(R.id.menu_item_share);
+
+        // Fetch and store ShareActionProvider
+        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, compliment);
+        shareIntent.setType("text/plain");
+        setShareIntent(shareIntent);
+
         return true;
+    }
+
+    private void setShareIntent(Intent shareIntent)
+    {
+        if (mShareActionProvider != null)
+        {
+            mShareActionProvider.setShareIntent(shareIntent);
+        }
     }
 
     @Override

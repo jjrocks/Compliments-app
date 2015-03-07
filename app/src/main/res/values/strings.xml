@@ -244,6 +244,7 @@
         <item>I would hold the elevator doors open for you if they were closing.</item>
         <item>Your every thought and motion contributes to the beauty of the universe.</item>
         <item>You make me want to frolic in a field.</item>
+        <item>I really love your style!</item>
     </string-array>
     <string name="title_activity_about">About</string>
     <string name="action_settings">Settings</string>
@@ -251,4 +252,6 @@
     <string name="inspired_by">Inspired by: <a href="http://complimentmachine.com">Compliment Machine</a></string>
     <string name="my_website">Check out <a href="http://jjwanda.com">my website!</a></string>
     <string name="donate"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=WX3VWJBPFZQTJ">Buy me some hot chocolate!</a></string>
+    <string name="about_add_compliment"><a href="http://goo.gl/forms/WYrwfWHxbG">Add a compliment!</a></string>
+    <string name="share_button_title">Share</string>
 </resources>
