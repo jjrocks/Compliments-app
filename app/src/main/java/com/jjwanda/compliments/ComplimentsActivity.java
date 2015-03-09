@@ -17,6 +17,8 @@ import java.util.Random;
 
 public class ComplimentsActivity extends ActionBarActivity {
 
+    private static final String complimentTag = "COMPLIMENT_TAG";
+    private static final String colorTag = "COLOR_TAG";
     private ShareActionProvider mShareActionProvider;
 
     String[] complimentsArray;
@@ -42,8 +44,17 @@ public class ComplimentsActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_compliments);
         setupUI();
-        changeCompliment();
-
+        if(savedInstanceState != null)
+        {
+            compliment = savedInstanceState.getString(complimentTag);
+            currentColor = savedInstanceState.getString(colorTag);
+            changeCompliment();
+        }
+        if (compliment.equals(""))
+        {
+            randomizeAll();
+            changeCompliment();
+        }
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,13 +64,13 @@ public class ComplimentsActivity extends ActionBarActivity {
         });
     }
 
+
+
     private void initializeVariables()
     {
         complimentsArray = getResources().getStringArray(R.array.compliments_string_array);
         complimentsSize = complimentsArray.length;
         randomGen = new Random();
-        complimentIndex = randomGen.nextInt(complimentsSize);
-        compliment = complimentsArray[complimentIndex];
 
         lightColorArray = getResources().getStringArray(R.array.light_colors);
         colorsSize = lightColorArray.length;
@@ -72,6 +83,8 @@ public class ComplimentsActivity extends ActionBarActivity {
         complimentTextView = (TextView) findViewById(R.id.compliment_textview);
         background = (RelativeLayout) findViewById(R.id.compliments_relativeView);
     }
+
+
 
     private void randomizeString()
     {
@@ -153,5 +166,13 @@ public class ComplimentsActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString(complimentTag, compliment);
+        outState.putString(colorTag, currentColor);
     }
 }
