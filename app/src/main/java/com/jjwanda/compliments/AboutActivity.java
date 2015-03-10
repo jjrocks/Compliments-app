@@ -21,6 +21,7 @@ public class AboutActivity extends ActionBarActivity {
 
     private void linkAllTexts()
     {
+        linkText((TextView) findViewById(R.id.add_compliment));
         linkText((TextView) findViewById(R.id.donate_text));
         linkText((TextView) findViewById(R.id.inspired_by_text));
         linkText((TextView) findViewById(R.id.website_text));
