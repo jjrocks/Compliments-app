@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 21
-    buildToolsVersion '22.0.0'
+    buildToolsVersion "21.1.2"
+
     defaultConfig {
-        applicationId "com.jjwanda.compliments"
-        minSdkVersion 7
+        applicationId "com.jjwanda.complimentsWear"
+        minSdkVersion 20
         targetSdkVersion 21
-        versionCode 2
-        versionName "1.1"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -16,13 +18,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.android.support:wearable:1.1.0'
+    compile 'com.google.android.gms:play-services-wearable:6.5.87'
     compile project(':common')
-    compile 'com.android.support:appcompat-v7:22.0.0'
-
 }

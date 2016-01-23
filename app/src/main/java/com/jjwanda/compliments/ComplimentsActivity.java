@@ -11,8 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.util.Random;
+import com.jjwanda.complimentscommon.Compliments;
 
 
 public class ComplimentsActivity extends ActionBarActivity {
@@ -21,17 +20,11 @@ public class ComplimentsActivity extends ActionBarActivity {
     private static final String colorTag = "COLOR_TAG";
     private ShareActionProvider mShareActionProvider;
 
-    String[] complimentsArray;
     String compliment = "";
-    int complimentsSize;
-    int complimentIndex;
 
-    String[] lightColorArray;
     String currentColor;
-    int colorsSize;
-    int colorIndex;
 
-    Random randomGen;
+    Compliments complimentClass;
 
     TextView complimentTextView;
     RelativeLayout background;
@@ -40,7 +33,8 @@ public class ComplimentsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initializeVariables();
+        complimentClass = new Compliments(this);
+        currentColor = complimentClass.randomizeColor();
 
         setContentView(R.layout.activity_compliments);
         setupUI();
@@ -64,54 +58,16 @@ public class ComplimentsActivity extends ActionBarActivity {
         });
     }
 
-
-
-    private void initializeVariables()
-    {
-        complimentsArray = getResources().getStringArray(R.array.compliments_string_array);
-        complimentsSize = complimentsArray.length;
-        randomGen = new Random();
-
-        lightColorArray = getResources().getStringArray(R.array.light_colors);
-        colorsSize = lightColorArray.length;
-        colorIndex = randomGen.nextInt(colorsSize);
-        currentColor = lightColorArray[colorIndex];
-    }
-
     private void setupUI()
     {
         complimentTextView = (TextView) findViewById(R.id.compliment_textview);
         background = (RelativeLayout) findViewById(R.id.compliments_relativeView);
     }
 
-
-
-    private void randomizeString()
-    {
-        int randomNumber = complimentIndex;
-        while (randomNumber == complimentIndex)
-        {
-            randomNumber = randomGen.nextInt(complimentsSize);
-        }
-        complimentIndex = randomNumber;
-        compliment = complimentsArray[complimentIndex];
-    }
-
-    private void randomizeColor()
-    {
-        int randomNumber = colorIndex;
-        while(randomNumber == colorIndex)
-        {
-            randomNumber = randomGen.nextInt(colorsSize);
-        }
-        colorIndex = randomNumber;
-        currentColor = lightColorArray[colorIndex];
-    }
-
     private void randomizeAll()
     {
-        randomizeString();
-        randomizeColor();
+        compliment = complimentClass.randomizeString();
+        currentColor = complimentClass.randomizeColor();
     }
 
     private void changeCompliment()
