@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Compliments</string>
+    <string name="hello_round">Hello Round World! This is an incredibly long sentence to see how much padding I need.</string>
+    <string name="hello_square">Hello Square World!</string>
+</resources>
