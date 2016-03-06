@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -7,6 +7,7 @@
         <!--<item name="android:actionBarStyle">@style/ThemeActionBar</item>-->
         <!--<item name="android:windowActionBarOverlay">true</item>-->
         <!-- Compaitibility -->
+        <item name="windowTranslucentStatus">true</item>
         <!--<item name="actionBarStyle">@style/ThemeActionBar</item>-->
         <!--<item name="windowActionBarOverlay">true</item>-->
     </style>
