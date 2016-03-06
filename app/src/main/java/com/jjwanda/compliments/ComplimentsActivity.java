@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.TintableBackgroundView;
+import android.support.v4.view.WindowCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ShareActionProvider;
@@ -12,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.jjwanda.complimentscommon.Compliments;
@@ -35,7 +38,6 @@ public class ComplimentsActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         complimentClass = new Compliments(this);
         currentColor = complimentClass.randomizeColor();
 
@@ -77,6 +79,14 @@ public class ComplimentsActivity extends ActionBarActivity {
     {
         complimentTextView.setText(compliment);
         background.setBackgroundColor(Color.parseColor(currentColor));
+
+        float[] hsv = new float[3];
+        int color = Color.parseColor(currentColor);
+        Color.colorToHSV(color, hsv);
+        hsv[2] = 0.1f + 0.8f * hsv[2];
+        color = Color.HSVToColor(hsv);
+        ColorDrawable colorDrawable = new ColorDrawable(color);
+        getSupportActionBar().setBackgroundDrawable(colorDrawable);
 
         Intent shareIntent = new Intent();
         shareIntent.setAction(Intent.ACTION_SEND);

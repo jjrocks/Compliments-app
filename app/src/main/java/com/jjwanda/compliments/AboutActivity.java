@@ -1,6 +1,9 @@
 package com.jjwanda.compliments;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.NavUtils;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -17,6 +20,8 @@ public class AboutActivity extends ActionBarActivity {
         setContentView(R.layout.activity_about);
         linkAllTexts();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat
+                .getColor(getApplicationContext(), R.color.about_status_bar_color)));
     }
 
     private void linkAllTexts()
