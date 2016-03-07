@@ -12,18 +12,15 @@ public class Compliments {
 //    private static final String complimentTag = "COMPLIMENT_TAG";
 //    private static final String colorTag = "COLOR_TAG";
 
-    String[] complimentsArray;
-    String compliment = "";
-    int complimentsSize;
-    int complimentIndex;
+    private String[] complimentsArray; // We get them from a compliments array
+    private int complimentIndex;
 
-    String[] lightColorArray;
-    String currentColor;
-    int colorsSize;
-    int colorIndex;
+    private String[] lightColorArray;
+    private String currentColor;
+    private int colorIndex;
 
-    Context context;
-    Random randomGen;
+    private Context context;
+    private Random randomGen;
 
     public Compliments(Context context)
     {
@@ -34,12 +31,9 @@ public class Compliments {
     private void initializeVariables()
     {
         complimentsArray = context.getResources().getStringArray(R.array.compliments_string_array);
-        complimentsSize = complimentsArray.length;
         randomGen = new Random();
-
         lightColorArray = context.getResources().getStringArray(R.array.light_colors);
-        colorsSize = lightColorArray.length;
-        colorIndex = randomGen.nextInt(colorsSize);
+        colorIndex = randomGen.nextInt(lightColorArray.length);
         currentColor = lightColorArray[colorIndex];
     }
 
@@ -48,11 +42,10 @@ public class Compliments {
         int randomNumber = complimentIndex;
         while (randomNumber == complimentIndex)
         {
-            randomNumber = randomGen.nextInt(complimentsSize);
+            randomNumber = randomGen.nextInt(complimentsArray.length);
         }
         complimentIndex = randomNumber;
-        compliment = complimentsArray[complimentIndex];
-        return compliment;
+        return complimentsArray[complimentIndex];
     }
 
     public String randomizeColor()
@@ -60,16 +53,10 @@ public class Compliments {
         int randomNumber = colorIndex;
         while(randomNumber == colorIndex)
         {
-            randomNumber = randomGen.nextInt(colorsSize);
+            randomNumber = randomGen.nextInt(lightColorArray.length);
         }
         colorIndex = randomNumber;
         currentColor = lightColorArray[colorIndex];
         return currentColor;
-    }
-
-    public void randomizeAll()
-    {
-        randomizeString();
-        randomizeColor();
     }
 }

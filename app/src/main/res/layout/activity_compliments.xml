@@ -17,6 +17,7 @@
         android:textAlignment="center"
         android:textSize= "@dimen/compliment_text_size"
         android:textColor="@color/initial_color"
-        android:text="@string/initial_compliment"/>
+        android:text="@string/initial_compliment"
+        tools:ignore="UnusedAttribute" />
 
 </RelativeLayout>
