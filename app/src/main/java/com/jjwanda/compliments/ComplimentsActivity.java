@@ -9,6 +9,7 @@ import android.support.v4.view.TintableBackgroundView;
 import android.support.v4.view.WindowCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +21,7 @@ import android.widget.TextView;
 import com.jjwanda.complimentscommon.Compliments;
 
 
-public class ComplimentsActivity extends ActionBarActivity {
+public class ComplimentsActivity extends AppCompatActivity {
 
     private static final String complimentTag = "COMPLIMENT_TAG";
     private static final String colorTag = "COLOR_TAG";

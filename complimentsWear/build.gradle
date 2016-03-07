@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.jjwanda.complimentsWear"
         minSdkVersion 20
-        targetSdkVersion 21
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -23,6 +23,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.google.android.support:wearable:1.1.0'
-    compile 'com.google.android.gms:play-services-wearable:6.5.87'
+    compile 'com.google.android.gms:play-services-wearable:8.4.0'
     compile project(':common')
 }

@@ -5,12 +5,12 @@ import android.content.Context;
 import java.util.Random;
 
 /**
- * Created by JJ's Lappy on 3/17/2015.
+ * This helps constantly switch the compliments.
  */
 public class Compliments {
 
-    private static final String complimentTag = "COMPLIMENT_TAG";
-    private static final String colorTag = "COLOR_TAG";
+//    private static final String complimentTag = "COMPLIMENT_TAG";
+//    private static final String colorTag = "COLOR_TAG";
 
     String[] complimentsArray;
     String compliment = "";
