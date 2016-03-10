@@ -74,7 +74,6 @@ public class ComplimentsActivityTest {
                 currentCompliment = tv.getText().toString();
             }
         });
-        currentCompliment = previousCompliment;
         assertNotSame("Compliments are the same", currentCompliment, previousCompliment);
     }
 }
